@@ -1,0 +1,996 @@
+\Mātes piens — Cinematic Ultra Design 
+
+<!DOCTYPE html> 
+
+<html lang="lv"> 
+
+<head> 
+
+<meta charset="UTF-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Mātes piens | Nora Ikstena</title> 
+
+ 
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+
+<style> 
+
+ 
+
+*{ 
+
+    margin:0; 
+
+    padding:0; 
+
+    box-sizing:border-box; 
+
+} 
+
+ 
+
+html{ 
+
+    scroll-behavior:smooth; 
+
+} 
+
+ 
+
+body{ 
+
+    font-family:'Inter',sans-serif; 
+
+    background:#050816; 
+
+    color:white; 
+
+    overflow-x:hidden; 
+
+} 
+
+ 
+
+/* ANIMATED BACKGROUND */ 
+
+ 
+
+.bg{ 
+
+    position:fixed; 
+
+    width:100%; 
+
+    height:100%; 
+
+    z-index:-3; 
+
+    background: 
+
+    radial-gradient(circle at top left,#3f1d1d,transparent 35%), 
+
+    radial-gradient(circle at bottom right,#111827,transparent 35%), 
+
+    linear-gradient(135deg,#1e293b,#111827,#0f172a); 
+
+} 
+
+ 
+
+.stars{ 
+
+    position:fixed; 
+
+    width:100%; 
+
+    height:100%; 
+
+    overflow:hidden; 
+
+    z-index:-2; 
+
+} 
+
+ 
+
+.stars span{ 
+
+    position:absolute; 
+
+    width:4px; 
+
+    height:4px; 
+
+    background:white; 
+
+    border-radius:50%; 
+
+    animation:float 10s linear infinite; 
+
+    opacity:0.5; 
+
+} 
+
+ 
+
+@keyframes float{ 
+
+    0%{ 
+
+        transform:translateY(100vh) scale(0); 
+
+    } 
+
+    100%{ 
+
+        transform:translateY(-10vh) scale(1); 
+
+    } 
+
+} 
+
+ 
+
+/* HERO */ 
+
+ 
+
+.hero{ 
+
+    min-height:100vh; 
+
+    display:flex; 
+
+    justify-content:center; 
+
+    align-items:center; 
+
+    text-align:center; 
+
+    flex-direction:column; 
+
+    padding:40px; 
+
+    position:relative; 
+
+} 
+
+ 
+
+.hero::before{ 
+
+    content:''; 
+
+    position:absolute; 
+
+    width:500px; 
+
+    height:500px; 
+
+    background:rgba(168,85,247,0.15); 
+
+    filter:blur(120px); 
+
+    border-radius:50%; 
+
+} 
+
+ 
+
+.hero h1{ 
+
+    font-size:7rem; 
+
+    font-family:'Playfair Display',serif; 
+
+    font-weight:900; 
+
+    line-height:1; 
+
+    background:linear-gradient(to right,#ffffff,#c084fc,#ffffff); 
+
+    -webkit-background-clip:text; 
+
+    -webkit-text-fill-color:transparent; 
+
+    z-index:2; 
+
+} 
+
+ 
+
+.hero p{ 
+
+    margin-top:30px; 
+
+    width:70%; 
+
+    line-height:2; 
+
+    font-size:1.2rem; 
+
+    color:#cbd5e1; 
+
+    z-index:2; 
+
+} 
+
+ 
+
+/* NAVIGATION */ 
+
+ 
+
+.navigation{ 
+
+    margin-top:50px; 
+
+    display:flex; 
+
+    flex-wrap:wrap; 
+
+    justify-content:center; 
+
+    gap:20px; 
+
+    z-index:2; 
+
+} 
+
+ 
+
+.navigation a{ 
+
+    text-decoration:none; 
+
+    color:white; 
+
+    padding:16px 28px; 
+
+    border-radius:50px; 
+
+    background:rgba(255,255,255,0.08); 
+
+    border:1px solid rgba(255,255,255,0.1); 
+
+    backdrop-filter:blur(12px); 
+
+    transition:0.4s; 
+
+    font-weight:600; 
+
+} 
+
+ 
+
+.navigation a:hover{ 
+
+    background:#991b1b; 
+
+    color:white; 
+
+    transform:translateY(-6px) scale(1.05); 
+
+    box-shadow:0 0 30px rgba(255,255,255,0.3); 
+
+} 
+
+ 
+
+/* SECTION */ 
+
+ 
+
+.container{ 
+
+    width:92%; 
+
+    margin:auto; 
+
+    padding-bottom:100px; 
+
+} 
+
+ 
+
+.panel{ 
+
+    display:grid; 
+
+    grid-template-columns:320px 1fr; 
+
+    gap:30px; 
+
+    margin-bottom:60px; 
+
+    background:rgba(15,23,42,0.75); 
+
+    border:1px solid rgba(255,255,255,0.08); 
+
+    border-radius:35px; 
+
+    overflow:hidden; 
+
+    backdrop-filter:blur(15px); 
+
+    transition:0.6s; 
+
+    position:relative; 
+
+} 
+
+ 
+
+.panel:hover{ 
+
+    transform:translateY(-10px) scale(1.01); 
+
+    box-shadow:0 0 40px rgba(127,29,29,0.35); 
+
+} 
+
+ 
+
+.panel::before{ 
+
+    content:''; 
+
+    position:absolute; 
+
+    width:100%; 
+
+    height:100%; 
+
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.06),transparent); 
+
+    transform:translateX(-100%); 
+
+    transition:1s; 
+
+} 
+
+ 
+
+.panel:hover::before{ 
+
+    transform:translateX(100%); 
+
+} 
+
+ 
+
+.panel img{ 
+
+    width:100%; 
+
+    height:100%; 
+
+    object-fit:cover; 
+
+} 
+
+ 
+
+.content{ 
+
+    padding:45px; 
+
+    position:relative; 
+
+    z-index:2; 
+
+} 
+
+ 
+
+.number{ 
+
+    width:70px; 
+
+    height:70px; 
+
+    border-radius:20px; 
+
+    display:flex; 
+
+    justify-content:center; 
+
+    align-items:center; 
+
+    background:linear-gradient(135deg,#7f1d1d,#991b1b); 
+
+    font-size:2rem; 
+
+    font-weight:700; 
+
+    margin-bottom:25px; 
+
+    box-shadow:0 0 25px rgba(168,85,247,0.4); 
+
+} 
+
+ 
+
+.content h2{ 
+
+    font-size:3rem; 
+
+    margin-bottom:25px; 
+
+    font-family:'Playfair Display',serif; 
+
+} 
+
+ 
+
+.content p{ 
+
+    color:#dbe4f0; 
+
+    line-height:2; 
+
+    font-size:1.05rem; 
+
+} 
+
+ 
+
+/* QUOTES */ 
+
+ 
+
+.quote{ 
+
+    margin-top:25px; 
+
+    padding:25px; 
+
+    border-left:4px solid #c084fc; 
+
+    background:rgba(255,255,255,0.04); 
+
+    border-radius:20px; 
+
+    color:#e2e8f0; 
+
+    font-style:italic; 
+
+} 
+
+ 
+
+/* FOOTER */ 
+
+ 
+
+footer{ 
+
+    text-align:center; 
+
+    padding:70px 20px; 
+
+    background:#020617; 
+
+    border-top:1px solid rgba(255,255,255,0.08); 
+
+} 
+
+ 
+
+footer h2{ 
+
+    font-size:3rem; 
+
+    font-family:'Playfair Display',serif; 
+
+    margin-bottom:20px; 
+
+} 
+
+ 
+
+footer p{ 
+
+    color:#94a3b8; 
+
+} 
+
+ 
+
+/* BUTTON */ 
+
+ 
+
+.top{ 
+
+    position:fixed; 
+
+    right:30px; 
+
+    bottom:30px; 
+
+    width:75px; 
+
+    height:75px; 
+
+    border:none; 
+
+    border-radius:50%; 
+
+    background:linear-gradient(135deg,#9333ea,#c084fc); 
+
+    color:white; 
+
+    font-size:2rem; 
+
+    cursor:pointer; 
+
+    box-shadow:0 0 30px rgba(168,85,247,0.5); 
+
+    transition:0.4s; 
+
+} 
+
+ 
+
+.top:hover{ 
+
+    transform:scale(1.1) rotate(10deg); 
+
+} 
+
+ 
+
+/* RESPONSIVE */ 
+
+ 
+
+@media(max-width:900px){ 
+
+ 
+
+.hero h1{ 
+
+    font-size:3.5rem; 
+
+} 
+
+ 
+
+.hero p{ 
+
+    width:100%; 
+
+} 
+
+ 
+
+.panel{ 
+
+    grid-template-columns:1fr; 
+
+} 
+
+ 
+
+.panel img{ 
+
+    height:260px; 
+
+} 
+
+ 
+
+.content h2{ 
+
+    font-size:2rem; 
+
+} 
+
+ 
+
+} 
+
+ 
+
+</style> 
+
+</head> 
+
+<body> 
+
+ 
+
+<div class="bg"></div> 
+
+ 
+
+<div class="stars"> 
+
+<span style="left:10%;animation-delay:0s"></span> 
+
+<span style="left:20%;animation-delay:2s"></span> 
+
+<span style="left:35%;animation-delay:4s"></span> 
+
+<span style="left:50%;animation-delay:1s"></span> 
+
+<span style="left:70%;animation-delay:3s"></span> 
+
+<span style="left:85%;animation-delay:5s"></span> 
+
+</div> 
+
+ 
+
+<section class="hero"> 
+
+<div class="milk"></div>
+```
+
+
+
+
+
+<h1>Mātes piens</h1> 
+
+ 
+
+<p> 
+
+Emocionāls stāsts par dzīvi Padomju Latvijā, ģimenes attiecībām un cilvēka cīņu par brīvību. Mājaslapa veidota tumšā un mierīgā stilā, lai atspoguļotu romāna noskaņu. 
+
+</p> 
+
+ 
+
+<div class="navigation"> 
+
+<a href="#autors">Autors</a> 
+
+<a href="#vide">Vide</a> 
+
+<a href="#varoni">Varoņi</a> 
+
+<a href="#atzina">Atziņa</a> 
+
+<a href="#kultura">Kultūra</a> 
+
+<a href="#atsauces">Atsauces</a> 
+
+</div> 
+
+ 
+
+</section> 
+
+ 
+
+<div class="container"> 
+
+ 
+
+<div class="panel" id="autors"> 
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP7UgKlqnPWtygdA73QtNrvVG2KOHCmBAkujmcsE9G3fhR3FJuY7STcjntnZR619YC-iYmSwKUli5bRRnqoUVjHAfnEAOEuKFCQxOqXDEXFQ&s=10"> 
+
+<div class="content"> 
+
+<div class="number">1</div> 
+
+<h2>Nora Ikstena</h2> 
+
+<p> 
+
+Nora Ikstena ir viena no pazīstamākajām mūsdienu latviešu rakstniecēm. Viņa dzimusi 1969. gada 15. oktobrī Rīgā. Nora Ikstena studēja latviešu filoloģiju Latvijas Universitātē, vēlāk papildināja zināšanas arī ārzemēs. 
+
+<br><br> 
+
+Savos darbos autore bieži raksta par cilvēka iekšējo pasauli, ģimenes attiecībām, Latvijas vēsturi un padomju laika ietekmi uz cilvēkiem. Viņas valoda ir emocionāla un dziļa, tāpēc darbi lasītājiem bieži liek aizdomāties par cilvēka dzīvi un jūtām. 
+
+<br><br> 
+
+Nozīmīgākie autores darbi ir “Mātes piens”, “Besa”, “Dzīves svinēšana”, “Jaunavas mācība” un “Amour Fou”. Romāns “Mātes piens” guva lielu starptautisku atzinību un tika tulkots vairāk nekā 20 valodās. 
+
+<br><br> 
+
+2023. gadā pēc šī romāna motīviem tika uzņemta filma, kuru režisēja Ināra Kolmane. 
+
+</p> 
+
+<div class="quote"> 
+
+“Cilvēka dvēsele ir stiprāka par sistēmu.” 
+
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<div class="panel" id="vide"> 
+
+<img src="https://r2.cdn.uzdevumi.lv/8c5b1359-a0ab-4b10-8cb8-99232f90d95e/warjpg_3024896b-1-w400.jpg"> 
+
+<div class="content"> 
+
+<div class="number">2</div> 
+
+<h2>Padomju Atmosfēra</h2> 
+
+<p> 
+
+Romāna “Mātes piens” darbība notiek Padomju Latvijas laikā pēc Otrā pasaules kara, galvenokārt 20. gadsimta 70. un 80. gados. 
+
+<br><br> 
+
+Tas bija laiks, kad cilvēku dzīvi kontrolēja padomju vara, valdīja cenzūra un cilvēki nevarēja brīvi izteikt savas domas. Sabiedrībā bieži valdīja bailes, nedrošība un emocionāla apspiestība. 
+
+<br><br> 
+
+Grāmatā ļoti spilgti attēlota ikdienas dzīve padomju laikā — slimnīcas, darbs, dzīve laukos un pilsētā, kā arī cilvēku attiecības. 
+
+<br><br> 
+
+Vide romānā ir smaga un drūma, jo daudzi cilvēki jūtas iesprostoti sistēmā un nespēj dzīvot brīvi. Tajā pašā laikā autore parāda, ka pat sarežģītos apstākļos cilvēki cenšas saglabāt cilvēcību, mīlestību un cerību uz labāku nākotni. 
+
+</p> 
+
+<div class="quote"> 
+
+“Brīvība sākas cilvēka domās.” 
+
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<div class="panel" id="varoni"> 
+
+<img src="https://www.filmas.lv/images/movies/49FA0D0C5450B95302BE86EA16457DA9.jpg"> 
+
+<div class="content"> 
+
+<div class="number">3</div> 
+
+<h2>Varoņi</h2> 
+
+<p> 
+
+Viens no galvenajiem varoņiem ir māte Astra, kura ir talantīga ārste un ļoti gudra sieviete. Viņa konfliktē ar padomju sistēmu un izjūt lielu vilšanos dzīvē. 
+
+<br><br> 
+
+Astra ir emocionāli salauzta, depresīva un bieži nespēj izrādīt mīlestību savai meitai. Viņas raksturā redzams nogurums un vientulība, tomēr dziļi sevī viņa vēlas patiesību un brīvību. 
+
+<br><br> 
+
+Otrs svarīgais tēls ir meita Nora, kura ir stāsta vērotāja. Viņa ir jūtīga, gudra un ļoti mīl savu māti, lai arī attiecības starp viņām ir sarežģītas. 
+
+<br><br> 
+
+Trešais nozīmīgais tēls ir vecmāmiņa, kura ģimenē simbolizē siltumu un rūpes. 
+
+</p> 
+
+<div class="quote"> 
+
+“Ģimene reizēm kļūst par vienīgo glābiņu.” 
+
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<div class="panel" id="atzina"> 
+
+<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2017_15/1336291/151211-brain-intelligence-mn-1045.jpg"> 
+
+<div class="content"> 
+
+<div class="number">4</div> 
+
+<h2>Atziņa</h2> 
+
+<p> 
+
+Pēc grāmatas izlasīšanas var secināt, ka totalitārs režīms ļoti smagi ietekmē cilvēka dzīvi un psihi, jo cilvēki zaudē brīvību un bieži kļūst emocionāli salauzti. 
+
+<br><br> 
+
+Vēl viena svarīga atziņa ir tā, ka ģimenes mīlestība un atbalsts palīdz izturēt pat vissmagākos dzīves brīžus. 
+
+<br><br> 
+
+Grāmata arī parāda, cik svarīgi ir nezaudēt cerību un saglabāt savu personību pat tad, kad apkārtējā vide cenšas cilvēku salauzt. 
+
+<br><br> 
+
+Darbs māca arī piedošanu un sapratni ģimenes attiecībās. 
+
+</p> 
+
+<div class="quote"> 
+
+“Cerība ir stiprāka par bailēm.” 
+
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<div class="panel" id="kultura"> 
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop"> 
+
+<div class="content"> 
+
+<div class="number">5</div> 
+
+<h2>Kultūras Fakti</h2> 
+
+<p> 
+
+Romāns “Mātes piens” ir viens no pazīstamākajiem mūsdienu latviešu literatūras darbiem. 
+
+<br><br> 
+
+Tas tulkots daudzās pasaules valodās, bet angļu valodā izdots ar nosaukumu “Soviet Milk”. 
+
+<br><br> 
+
+2023. gadā pēc romāna motīviem tika uzņemta filma “Mātes piens”, kas guva lielu skatītāju interesi Latvijā. 
+
+<br><br> 
+
+Filmas galvenās lomas atveidoja Maija Doveika, Elīna Vaska un Rūta Kronberga. 
+
+</p> 
+
+<div class="quote"> 
+
+“Soviet Milk kļuva pazīstams visā pasaulē.” 
+
+</div> 
+
+</div> 
+
+</div> 
+
+ 
+
+<div class="panel" id="atsauces"> 
+
+<img src="https://viss.lv/dati/visitdobele/mates-piens/mates-piens.jpg"> 
+
+<div class="content"> 
+
+<div class="number">6</div> 
+
+<h2>Atsauces</h2> 
+
+<p> 
+
+• Literatura.lv — “Mātes piens”<br><br> 
+
+• LSM — filma “Mātes piens”<br><br> 
+
+• Nacionālais kino centrs — “Soviet Milk”<br><br> 
+
+• Goodreads — Nora Ikstena 
+
+</p> 
+
+</div> 
+
+</div> 
+
+ 
+
+</div> 
+
+ 
+
+<footer> 
+
+<h2>Mātes piens</h2> 
+
+<p> 
+
+Literatūras projekts par Noras Ikstenas romānu “Mātes piens” 
+
+</p> 
+
+</footer> 
+
+ 
+
+<button class="top" onclick="up()">↑</button> 
+
+ 
+
+<script> 
+
+ 
+
+function up(){ 
+
+window.scrollTo({top:0,behavior:'smooth'}); 
+
+} 
+
+ 
+
+const panels=document.querySelectorAll('.panel'); 
+
+ 
+
+window.addEventListener('scroll',()=>{ 
+
+ 
+
+panels.forEach(panel=>{ 
+
+ 
+
+const top=panel.getBoundingClientRect().top; 
+
+ 
+
+if(top<window.innerHeight-100){ 
+
+ 
+
+panel.style.opacity='1'; 
+
+panel.style.transform='translateY(0px)'; 
+
+ 
+
+} 
+
+ 
+
+}); 
+
+ 
+
+}); 
+
+ 
+
+panels.forEach(panel=>{ 
+
+panel.style.opacity='0'; 
+
+panel.style.transform='translateY(120px)'; 
+
+panel.style.transition='1s'; 
+
+}); 
+
+ 
+
+</script> 
+
+ 
+
+</body> 
+
+</html> 
+
+ 
